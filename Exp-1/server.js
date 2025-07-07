@@ -3,7 +3,11 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
+<<<<<<< HEAD
 const port = 3001;
+=======
+const port = 3000;
+>>>>>>> b06a65e21de2078874fe07f6500b8732f85ac137
 const baseDir = __dirname;
 
 const server = http.createServer((req, res) => {
