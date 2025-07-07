@@ -1,0 +1,19 @@
+{
+  "name": "student-cgpa-app",
+  "version": "1.0.0",
+  "description": "A Node.js app using Express and Handlebars to calculate and display CGPA in steps.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Selva J",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.3",
+    "hbs": "^4.2.0"
+  },
+  "keywords": [],
+  "type": "commonjs"
+}
