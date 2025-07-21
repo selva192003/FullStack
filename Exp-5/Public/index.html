@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Todo App</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="TodoController">
+    <div class="container my-5">
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white text-center py-3">
+                <h1 class="mb-0">My Professional Todo List</h1>
+            </div>
+            <div class="card-body p-4">
+
+                <form ng-submit="addTodo()" class="mb-4">
+                    <div class="input-group">
+                        <input type="text" ng-model="newTodoText" class="form-control form-control-lg" placeholder="Add a new task..." required>
+                        <button class="btn btn-primary" type="submit">Add Task</button>
+                    </div>
+                </form>
+
+                <div class="mb-4">
+                    <input type="text" ng-model="searchText" class="form-control" placeholder="Search tasks...">
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="text-muted">
+                        Active: <span class="fw-bold">{{ (todos | filter:{completed:false}).length }}</span> |
+                        Completed: <span class="fw-bold">{{ (todos | filter:{completed:true}).length }}</span>
+                    </div>
+                    <button class="btn btn-outline-danger btn-sm" ng-click="clearCompleted()" ng-show="(todos | filter:{completed:true}).length > 0">Clear Completed</button>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li ng-repeat="todo in todos | orderBy:'-id' | filter:searchText" class="list-group-item d-flex align-items-center justify-content-between">
+                        <div class="form-check d-flex align-items-center flex-grow-1">
+                            <input class="form-check-input me-3" type="checkbox" ng-model="todo.completed" ng-change="toggleCompleted(todo)" id="todoCheck-{{todo.id}}">
+
+                            <label class="form-check-label flex-grow-1" for="todoCheck-{{todo.id}}">
+                                <span ng-hide="todo.editing"
+                                      ng-class="{ 'text-decoration-line-through text-muted': todo.completed }"
+                                      ng-click="editTodo(todo)">
+                                    {{ todo.text }}
+                                </span>
+                                <input ng-show="todo.editing"
+                                       ng-model="todo.text"
+                                       ng-blur="saveEdit(todo)"
+                                       ng-keydown="$event.keyCode == 13 && saveEdit(todo)"
+                                       class="form-control form-control-sm"
+                                       autofocus>
+                            </label>
+                        </div>
+                        <button class="btn btn-danger btn-sm" ng-click="deleteTodo(todo.id)">Delete</button>
+                    </li>
+                    <li ng-if="(todos | filter:searchText).length === 0" class="list-group-item text-center text-muted">
+                        No tasks found.
+                    </li>
+                </ul>
+
+            </div>
+            <div class="card-footer text-center text-muted py-3">
+                A Modern Todo Application built with AngularJS and Node.js
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eJ7y5n7J5E" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "todo-app-node-angularjs",
+  "version": "1.0.0",
+  "description": "A simple Todo application using AngularJS and Node.js with JSON file storage.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "body-parser": "^1.20.2"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
