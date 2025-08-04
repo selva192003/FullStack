@@ -1,0 +1,6 @@
+/* public/style.css */
+/* Custom styles can go here, but Tailwind handles most of it */
+/* Ensure Inter font is applied */
+body {
+    font-family: 'Inter', sans-serif;
+}
