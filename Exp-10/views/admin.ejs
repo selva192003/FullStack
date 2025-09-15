@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+<h1>Admin</h1>
+
+<section class="admin-grid">
+  <div>
+    <h2>Posts</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Created</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (!posts || posts.length === 0) { %>
+          <tr><td colspan="3">No posts yet</td></tr>
+        <% } else { %>
+          <% posts.forEach(function(post){ %>
+            <tr>
+              <td><a href="/post/<%= post.slug %>" target="_blank"><%= post.title %></a></td>
+              <td><%= new Date(post.createdAt).toLocaleString() %></td>
+              <td class="actions">
+                <a class="btn" href="/admin/edit/<%= post._id %>">Edit</a>
+                <form method="POST" action="/admin/delete/<%= post._id %>" onsubmit="return confirm('Delete this post?')">
+                  <input type="hidden" name="token" value="<%= token %>">
+                  <button class="btn danger" type="submit">Delete</button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>New Post</h2>
+    <form method="POST" action="/admin/create" class="admin-form">
+      <label>Title
+        <input type="text" name="title" required>
+      </label>
+      <label>Content
+        <textarea name="content" rows="12" required></textarea>
+      </label>
+      <button type="submit">Create</button>
+    </form>
+  </div>
+</section>
+<%- include('partials/footer') %>

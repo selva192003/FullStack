@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+<h1>Latest posts</h1>
+<div class="grid">
+  <% if (posts.length === 0) { %>
+    <div class="empty">No posts yet. <a href="/admin">Add one</a>.</div>
+  <% } %>
+  <% posts.forEach(function(post){ %>
+    <a class="card" href="/post/<%= post.slug %>">
+      <div class="card-title"><%= post.title %></div>
+      <div class="card-sub"><%= new Date(post.createdAt).toLocaleString() %></div>
+    </a>
+  <% }) %>
+  
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,62 @@
+[
+  {
+    "topic": "JavaScript",
+    "questions": [
+      {
+        "questionText": "What is the purpose of the 'let' keyword in JavaScript?",
+        "options": [
+          "To declare a constant variable",
+          "To declare a variable with block scope",
+          "To declare a global variable",
+          "To declare a function"
+        ],
+        "correctAnswer": "To declare a variable with block scope"
+      },
+      {
+        "questionText": "Which method is used to remove the last element from an array?",
+        "options": [
+          "shift()",
+          "pop()",
+          "splice()",
+          "push()"
+        ],
+        "correctAnswer": "pop()"
+      },
+      {
+        "questionText": "How do you add a comment in JavaScript?",
+        "options": [
+          "// This is a comment",
+          "",
+          "# This is a comment",
+          "/* This is a comment */"
+        ],
+        "correctAnswer": "// This is a comment"
+      }
+    ]
+  },
+  {
+    "topic": "HTML",
+    "questions": [
+      {
+        "questionText": "What does HTML stand for?",
+        "options": [
+          "Hyper Text Markup Language",
+          "Hyperlinks and Text Markup Language",
+          "Home Tool Markup Language",
+          "Hyper Tool Markup Language"
+        ],
+        "correctAnswer": "Hyper Text Markup Language"
+      },
+      {
+        "questionText": "Which HTML tag is used to define an internal stylesheet?",
+        "options": [
+          "<script>",
+          "<style>",
+          "<css>",
+          "<link>"
+        ],
+        "correctAnswer": "<style>"
+      }
+    ]
+  }
+]

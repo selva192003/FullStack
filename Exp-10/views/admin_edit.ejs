@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+<h1>Edit Post</h1>
+<form method="POST" action="/admin/edit/<%= post._id %>" class="admin-form">
+  <label>Title
+    <input type="text" name="title" value="<%= post.title %>" required>
+  </label>
+  <label>Content
+    <textarea name="content" rows="12" required><%= post.content %></textarea>
+  </label>
+  <button type="submit">Save</button>
+  <a class="btn" href="/admin">Cancel</a>
+</form>
+<%- include('partials/footer') %>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online MCQ Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo">
+                <span class="logo-icon">🧠</span>
+                <span class="logo-text">QuizMaster Pro</span>
+            </div>
+            <div class="header-gradient"></div>
+        </header>
+
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to QuizMaster Pro</h1>
+                <p class="hero-tagline">Challenge your mind. Master new topics. Level up your knowledge.</p>
+                <div class="hero-features">
+                    <div class="feature"><span class="feature-icon">⚡</span> Fast & Fun Quizzes</div>
+                    <div class="feature"><span class="feature-icon">🎨</span> Modern UI</div>
+                    <div class="feature"><span class="feature-icon">📊</span> Instant Results</div>
+                </div>
+                <a href="#topics" class="cta-btn">Start Now</a>
+            </div>
+            <div class="hero-shapes">
+                <div class="shape shape1"></div>
+                <div class="shape shape2"></div>
+                <div class="shape shape3"></div>
+            </div>
+        </section>
+
+        <div id="topic-selection-container" class="section active" style="margin-top:2rem;" >
+            <h2 class="animated-title" id="topics">Choose a Topic</h2>
+            <div id="topics-list" class="topics-grid modern-topics"></div>
+        </div>
+
+        <div id="quiz-container" class="section">
+            <div class="quiz-header">
+                <h2 id="quiz-topic"></h2>
+                <div id="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+            <div id="question-card" class="card">
+                <p id="question-text"></p>
+                <div id="options-list" class="options-grid"></div>
+            </div>
+            <div class="navigation-buttons">
+                <button id="prev-btn" class="btn" style="display: none;">Previous</button>
+                <button id="next-btn" class="btn">Next</button>
+            </div>
+            <button id="submit-btn" class="btn" style="display: none;">Submit Quiz</button>
+        </div>
+
+        <div id="results-container" class="section">
+            <div id="results-card" class="card results-card-animated">
+                <h2 class="results-title">🎉 Quiz Results 🎉</h2>
+                <div id="score-display"></div>
+                <div id="results-summary"></div>
+                <div id="results-details"></div>
+            </div>
+            <button id="restart-btn" class="btn">Restart Quiz</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
