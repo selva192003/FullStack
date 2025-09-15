@@ -1,0 +1,58 @@
+/* Minimal custom styles to override/supplement Bootstrap */
+
+body {
+    background-color: #f8f9fa; /* Light background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-header {
+    background-color: #007bff !important; /* Ensure primary blue */
+}
+
+.card-footer {
+    font-size: 0.9em;
+}
+
+/* Adjust checkbox alignment */
+.form-check-input {
+    min-width: 1.25em; /* Make checkbox slightly larger and consistent */
+    height: 1.25em;
+    margin-top: 0.25em; /* Fine-tune vertical alignment */
+}
+
+/* Make text input for edit smaller */
+.list-group-item input.form-control-sm {
+    padding: 0.25rem 0.5rem; /* Smaller padding */
+    height: auto; /* Auto height */
+    font-size: 1rem; /* Match span font size */
+}
+
+/* Ensure the label takes full width for clickability */
+.list-group-item .form-check-label {
+    cursor: pointer; /* Indicate editable */
+    width: 100%; /* Important for text to be clickable */
+}
+
+/* Hide the native checkbox when it's part of the editable text area */
+.form-check-input[type="checkbox"]:checked + .form-check-label {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Style for the span when in non-editing mode */
+.form-check-label span {
+    display: block; /* Ensures it takes up full space */
+    padding-top: 0.375rem; /* Align with input padding */
+    padding-bottom: 0.375rem;
+    padding-left: 0.75rem; /* Align with input padding */
+}
+
+.list-group-item {
+    padding-left: 0; /* Remove default list-group-item padding to align checkbox */
+    padding-right: 1.25rem; /* Restore padding on the right */
+}
+
+/* For better spacing of the delete button */
+.list-group-item .btn {
+    margin-left: 1rem;
+}
